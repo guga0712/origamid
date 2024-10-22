@@ -20,8 +20,6 @@ function initTabNav() {
   }
 }
 
-initTabNav();
-
 function initAccordion() {
   const accordionList = document.querySelectorAll('.js-accordion dt');
   const activeClass = 'ativo'
@@ -41,8 +39,6 @@ function initAccordion() {
     })
   }
 }
-
-initAccordion();
 
 function initScrollSuave() {
   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
@@ -69,8 +65,6 @@ function initScrollSuave() {
   });
 }
 
-initScrollSuave();
-
 function initAnimacaoScroll() {
   const sections = document.querySelectorAll('.js-scroll');
   const windowMetade = window.innerHeight * 0.6
@@ -92,4 +86,6 @@ function initAnimacaoScroll() {
 }
 
 initAnimacaoScroll();
-
+initTabNav();
+initScrollSuave();
+initAccordion();
