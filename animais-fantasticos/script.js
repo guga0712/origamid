@@ -70,3 +70,26 @@ function initScrollSuave() {
 }
 
 initScrollSuave();
+
+function initAnimacaoScroll() {
+  const sections = document.querySelectorAll('.js-scroll');
+  const windowMetade = window.innerHeight * 0.6
+
+  if (sections.length) {
+    function animalScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top
+        const isSectionVisible = (sectionTop - windowMetade) < 0
+        if (isSectionVisible) {
+          section.classList.add('ativo');
+        }
+      });
+    }
+    animalScroll()
+
+    window.addEventListener('scroll', animalScroll)
+  }
+}
+
+initAnimacaoScroll();
+
