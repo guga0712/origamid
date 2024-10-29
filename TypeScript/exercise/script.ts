@@ -1,27 +1,13 @@
-"use strict";
 
-const input = document.querySelector('input');
-
-const total = localStorage.getItem('total')
-if (input && total) {
-  input.value = total
-  calcularGanho(Number(input.value));
-}
-
-function calcularGanho(value: number) {
-  const p = document.querySelector('p');
-  if (p) {
-    p.innerText = `ganho total: ${value + 100 - value * 0.2}`;
-
-  }
-}
-function totalMudou() {
-  if (input) {
-    localStorage.setItem('total', input.value);
-    calcularGanho(Number(input.value));
+function toNumber(value: number | string) {
+  if (typeof value === "number") {
+    return console.log(value);
+  } else if (typeof value === "string") {
+    return console.log(Number(value))
+  } else {
+    throw "value deve ser um número ou uma string";
   }
 }
 
-if (input) {
-  input.addEventListener('keyup', totalMudou);
-}
+
+toNumber(100)
