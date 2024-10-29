@@ -1,8 +1,22 @@
-//@ts-check
+// @ts-check
 
-const frase = 'Front';
-const total = 100;
-const empresas = ['Apple', 'Microsoft']
+const produtos = [
+  {
+    nome: "O senhor dos anéis",
+    tipo: "Livro",
+  },
+  {
+    nome: "A Guerra dos Tronos",
+    tipo: "Livro",
+  },
+  {
+    nome: "Dark Souls",
+    tipo: "Jogo",
+  }
+]
 
-console.log(frase.toLowerCase());
-total.toLowerCase()
+function filtrarLivros(dados) {
+  return dados.filter(item => item.tipo === "Livro")
+}
+
+console.log(filtrarLivros(produtos))
