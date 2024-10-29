@@ -1,6 +1,6 @@
 "use strict";
 
-type Produto = {
+interface Produto {
   nome: string;
   preco: number;
   teclado: boolean;

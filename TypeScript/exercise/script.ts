@@ -1,13 +1,39 @@
+async function fetchProduct() {
+  const response = await fetch('https://api.origamid.dev/json/notebook.json');
+  const data = await response.json();
+  showProduct(data);
+}
 
-function toNumber(value: number | string) {
-  if (typeof value === "number") {
-    return console.log(value);
-  } else if (typeof value === "string") {
-    return console.log(Number(value))
-  } else {
-    throw "value deve ser um número ou uma string";
-  }
+fetchProduct();
+
+interface Empresa {
+  nome: string;
+  fundacao: number;
+  pais: string;
+}
+
+interface Product {
+  nome: string;
+  preco: number;
+  descricao: string;
+  garantia: string;
+  seguroAcidentes: boolean;
+  empresaFabricante: Empresa;
+  empresaMontadora: Empresa;
 }
 
 
-toNumber(100)
+function showProduct(data: Product) {
+  document.body.innerHTML = `
+    <div>
+      <h2>${data.nome}</h2>
+      <p>R$ ${data.preco}</p>
+      <div>
+        <h3>Fabricante: ${data.empresaFabricante.nome}</h3>
+      </div>
+      <div>
+        <h3>Montadora: ${data.empresaMontadora.nome}</h3>
+      </div>
+    </div>
+  `;
+}
