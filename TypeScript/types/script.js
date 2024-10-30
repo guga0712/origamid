@@ -9,3 +9,4 @@ function isNumber(value) {
         return false;
     }
 }
+console.log('aaaaa');

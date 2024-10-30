@@ -7,7 +7,7 @@ function isNumber(value: string | number) {
   } else {
     return false;
   }
-
-
 }
+
+console.log('aaaaa')
 
