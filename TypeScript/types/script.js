@@ -1,5 +1,11 @@
 "use strict";
-function normalizarTexto(texto) {
-    return texto.trim().toLowerCase();
+let total = 200;
+total = "4000";
+function isNumber(value) {
+    if (typeof value === "number") {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
-console.log(normalizarTexto(' Caralh '));
